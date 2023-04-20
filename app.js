@@ -17,19 +17,17 @@ function findSmallest(array) {
 }
 
 function sortNumbers(array) {
-  // faire une copie de tableau pour pouvoir enlever des numèros plus petits
-  let copyOfArray = array;
   // définir un tableau vide pour stocker des numeros triés
   let sortedNumbers = [];
   let iterations = array.length;
   for (let i = 0; i < iterations; i++) {
     // initialiser et attribuer un valeur à un varible pour le valeur plus petit trouvé
-    let smallest = findSmallest(copyOfArray);
+    let smallest = findSmallest(array);
     // mettre ce valeur dans le tableau de resultat
     sortedNumbers.push(smallest);
-    // suprimer cette valeur de la copie de tableau pour pouvoir le parcourir encore une fois
+    // suprimer cette valeur du tableau pour pouvoir le parcourir encore une fois
     // depuis la fonction findSmpallest sans les numéros déjà trouvés
-    copyOfArray.splice(copyOfArray.indexOf(smallest), 1);
+    array.splice(array.indexOf(smallest), 1);
   }
   // retourner un tableau trié
   return sortedNumbers;
